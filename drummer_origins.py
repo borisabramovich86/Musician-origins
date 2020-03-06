@@ -81,7 +81,8 @@ def get_markers(wiki_name, markers, found_file_ref, missing_file_ref):
 	return markers
 
 def load_markers_from_file(file_name, markers):
-	file1=open(file_name, "r")
+	file_path = "Cache/{}".format(file_name)
+	file1=open(file_path, "r")
 	Lines = file1.readlines()
 
 	for line in Lines: 
@@ -120,4 +121,6 @@ def guitarists():
 def bassists():
 	print("getting bassists")
 	return get_musician_data("List_of_bass_guitarists", 'bassists_found', 'bassists_missing', bassists_markers)
+
+
 #env FLASK_APP=drummer_origins.py flask run
